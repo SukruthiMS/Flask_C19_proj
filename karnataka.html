@@ -1,0 +1,190 @@
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      
+       <link href="static/karnataka.css" rel="stylesheet" />
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
+       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115210819-6"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+   
+         gtag('config', 'UA-115210819-6');
+       </script>
+       <title>Karnataka</title>
+   </head>
+   <body>
+         
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Covid-19 Spread Analysis</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/prediction">Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/world">World</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/countries">Countries</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/india">India</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/map">India Map</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/karnataka">Karnataka</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/vaccination">Vaccination</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/article">Articles</a>
+                </li>
+              
+            </ul>
+            
+        </div>
+    </div>
+   </nav>  
+       <div class="header">
+           <h2>Covid-19 Karnataka Statistics</h2>
+           
+           <h6>Last updated on<span id="lastUpdate"></span></h6>
+         </div>
+       <div class="row">
+           <div class="col-sm-3">
+             <div class="card">
+               <div class="card-header bg-transparent">Confirmed</div>
+               <div class="card-body">
+                 <h4 class="card-text"><span id="statusConfirm"></span></h4>
+               </div>
+             </div>
+           </div>
+         
+           <div class="col-sm-3">
+             <div class="card">
+               <div class="card-header bg-transparent">Active</div>
+               <div class="card-body">
+                 <h4 class="card-text"><span id="statusActive"></span></h4>
+               </div>
+             </div>
+           </div>
+           
+           <div class="col-sm-3">
+             <div class="card">
+               <div class="card-header bg-transparent">Recovered</div>
+               <div class="card-body">
+                 <h4 class="card-text"><span id="statusRecovered"></span></h4>
+               </div>
+             </div>
+           </div>
+           
+           <div class="col-sm-3">
+             <div class="card">
+               <div class="card-header bg-transparent">Deceased</div>
+               <div class="card-body">
+                 <h4 class="card-text"><span id="statusDeceased"></span></h4>
+               </div>
+                <!-- <svg class="bi bi-info-circle" data-toggle="popover" data-placement="bottom" data-content="Deaths due to comorbidities added to total deceased" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                   <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                   <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                   <circle cx="8" cy="4.5" r="1"/>
+                 </svg> -->
+               </p>
+             </div>
+           </div>
+         </div>
+       
+         <div class="card text-center" style="margin-top: 10px; margin-bottom: 10px; padding: 0%;">
+           <div class="card-header bg-transparent">Daily Trend (Last 10 Days)</div>
+           <div class="card-body">
+             <canvas id="weekChart"></canvas>
+           </div>
+         </div>
+   
+         <div class="card text-center" style="margin-top: 10px; margin-bottom: 10px; padding: 0%;">
+           <div class="card-header bg-transparent">Last 24 Hours</div>
+           <div class="card-body">
+             <div class="row">
+               <div class="col-sm-4">
+                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                   <div class="card-body">
+                     <h5 class="card-title">Confirmed</h5>
+                     <h4 class="card-text"><span id="lastConfirmed"></span></h4>
+                   </div>
+                 </div>
+               </div>
+               <div class="col-sm-4">
+                 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                   <div class="card-body">
+                     <h5 class="card-title">Recovered</h5>
+                     <h4 class="card-text"><span id="lastRecovered"></span></h4>
+                   </div>
+                 </div>
+               </div>
+               <div class="col-sm-4">
+                 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                   <div class="card-body">
+                     <h5 class="card-title">Deceased</h5>
+                     <h4 class="card-text"><span id="lastDeceased"></span></h4>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div> 
+   
+       
+   
+         <div class="card text-center" style="margin-top: 10px; margin-bottom: 10px; padding: 0%;">
+           <div class="card-header bg-transparent">District wise Data</div>
+           <div class="card-body">
+             <div class="table-responsive">
+               <table class="table table-striped">
+                 <tr  class="bg-info">
+                     <th>District</th>
+                     <th>Confirmed</th>
+                     <th>Active</th>
+                     <th>Recovered</th>
+                     <th>Deceased</th>
+                 </tr>
+             
+                 <tbody id="myTable">
+                 </tbody>
+               </table>
+             </div> 
+           </div>
+         </div> 
+       
+       <script src="static/karnataka.js"></script>
+   </body>
+   </html>

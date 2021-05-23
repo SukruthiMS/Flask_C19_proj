@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+    <title>Countries</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="static/countries.css">
+</head>
+<body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Covid-19 Spread Analysis</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/prediction">Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/world">World</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/countries">Countries</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/india">India</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/map">India Map</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/karnataka">Karnataka</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/vaccination">Vaccination</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/article">Articles</a>
+                </li>
+              
+            </ul>
+            
+        </div>
+    </div>
+</nav>
+
+        <div class="loader">
+            <div class="loading-bar">
+                <i class="material-icons">
+                    replay
+                    </i>
+                   
+            </div>
+            
+            <h1 class="code-title"> fetching data </h1>
+    
+        </div> 
+        
+    
+        <main class="main">
+    
+            <h1 class="code-title">Countries Report</h1>
+    
+            <div class="search-box">
+                <input id="search-textbox" class="search-text" type="text" placeholder="Seach Country Name">
+                <div class="search-icon">
+                    <i class="material-icons">
+                        search
+                        </i>
+                </div>
+            </div>
+    
+             <div class="country" id="GlobalData">
+    
+                 <!-- <div class="country__item">
+                    <h1 class="country__name">India</h1>
+                    <div class="country__item__data">
+                        <div class="country__item__data__item">
+                            <h1 class="country__text-1">20</h1>
+                            <h1 class="country__text-1">Confirmed</h1>
+                        </div>
+                        <div class="country__item__data__item">
+                            <h1 class="country__text-1">20</h1>
+                            <h1 class="country__text-1">Deaths</h1>
+                        </div>
+                        <div class="country__item__data__item">
+                            <h1 class="country__text-1">20</h1>
+                            <h1 class="country__text-1">Recovered</h1>
+                        </div>
+                        <span class="country__name--full">India</span>
+                    </div>
+                </div>  -->
+            
+             </div>
+             
+        </main>
+    
+    
+        <div class="section-country-wise">
+    
+        
+                <div class="previou-btn">
+                    <i class="material-icons">
+                        reply
+                        </i>
+                </div>
+        
+    
+    
+            <h1 class="code-title--sec">
+                        <span class="code-title--sec--1">INDIA</span>
+                        <span class="code-title--sec--2">All Data Analysis</span>
+            </h1>
+    
+            <div class="country__item country__item--innerpage" id="innerPageToatalAlys">
+                <div class="country__item__data">
+                    <div class="country__item__data__item">
+                        <h1 class="country__text-1" id="innerPageToatalAlys--confirm">20</h1>
+                        <h1 class="country__text-1">Confirmed</h1>
+                    </div>
+                    <div class="country__item__data__item">
+                        <h1 class="country__text-1" id="innerPageToatalAlys--deaths">20</h1>
+                        <h1 class="country__text-1">Deaths</h1>
+                    </div>
+                    <div class="country__item__data__item">
+                        <h1 class="country__text-1" id="innerPageToatalAlys--recover">20</h1>
+                        <h1 class="country__text-1">Recovered</h1>
+                    </div>
+                </div>
+            </div> 
+    
+    
+            
+          
+                
+            <div class="specfic-List">   
+    
+                <div class="table-view" id="table">
+    
+                    <div class="specfic-List__grid">
+                        <div class="specfic-List__item">Date</div>
+                        <div class="specfic-List__item">Confirmed</div>
+                        <div class="specfic-List__item">Deaths</div>
+                        <div class="specfic-List__item">Recovered</div>
+                    </div>
+    
+    
+                    <div class="specfic-List__grid">
+                        <div class="specfic-List__item">Date</div>
+                        <div class="specfic-List__item">Confirmed</div>
+                        <div class="specfic-List__item">Deaths</div>
+                        <div class="specfic-List__item">Recovered</div>
+                    </div>
+            
+                </div>
+                
+            </div>
+            
+    
+    
+    
+    
+    
+        <script src="static/countries.js"></script> 
+    </body>
+    </html>

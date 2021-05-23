@@ -1,0 +1,75 @@
+* {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  box-sizing: border-box;
+  padding:0px 3px;
+  }
+  
+  .header {
+    padding: 0px;
+    text-align: center;
+    background: #FDFDFD;
+    color: black;
+    font-size: 20px;
+  }
+  
+  body {
+   
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    width: 100%;
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {
+    width: 100%;
+      margin: 0 -5px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    width: 100%;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 10px;
+    text-align: center;
+    background-color: #367edd;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+
+      
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+  table, th { 
+    
+    color:#fff;
+    text-align: center;
+    vertical-align: middle;
+        }
+  td {
+    
+    text-align: center;
+    vertical-align: middle;
+        }
